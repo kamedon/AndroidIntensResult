@@ -1,12 +1,30 @@
 package com.kamedon.androidintensresult
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        selectPhotoBtn.setOnClickListener {
+            startActivity(Intent(this, SelectPhotoActivity::class.java))
+        }
+
+        selectPhotoFragmentBtn.setOnClickListener {
+            startActivity(Intent(this, SelectPhotoFromFragmentActivity::class.java))
+        }
+
+        customBtn.setOnClickListener {
+            startActivity(Intent(this, CustomActivity::class.java))
+        }
+
+        customFromFragmentBtn.setOnClickListener {
+            startActivity(Intent(this, CustomFromFragmentActivity::class.java))
+        }
     }
+
+
 }
